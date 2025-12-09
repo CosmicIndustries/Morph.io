@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Morph.io</title>
+</head>
+<body>
+<h1>Morph.io Supersampler</h1>
+<p>Status: <span id="st">Disconnected</span></p>
+
+<script>
+let ws = new WebSocket("ws://127.0.0.1:8766");
+ws.binaryType = "arraybuffer";
+ws.onopen = () => document.getElementById("st").innerText = "Connected";
+ws.onclose = () => document.getElementById("st").innerText = "Closed";
+ws.onmessage = (ev) => {
+    console.log("Audio chunk:", ev.data);
+};
+</script>
+</body>
+</html>

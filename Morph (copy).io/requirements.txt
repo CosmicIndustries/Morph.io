@@ -1,0 +1,8 @@
+numpy
+scipy
+sounddevice
+soundfile
+pillow
+websockets>=10.0
+pyogg   # optional; if unavailable the bundle will fall back to PCM streaming only
+
